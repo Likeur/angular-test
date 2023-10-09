@@ -1,0 +1,7 @@
+<div class="mt-10 flex justify-center ">
+    <form [formGroup]="addTodoForm" class="flex flex-col md:flex-row items-center">
+        <input type="text" placeholder="Titre" class="w-80 border outline-none p-2  mt-3 md:mt-0" formControlName="title">
+        <input type="text" placeholder="Description" class="w-80  outline-none border p-2 mt-3 md:mt-0 md:ml-2" formControlName="description">
+        <button class="bg-blue-600 md:ml-2 cursor-pointer  disabled:bg-gray-400 mt-3 md:w-20 md:mt-0 w-full p-2 text-white" [disabled]="addTodoForm.invalid" type="submit" (click)="onSubmit()">Créer</button>
+    </form>
+</div>

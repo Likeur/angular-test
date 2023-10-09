@@ -1,0 +1,13 @@
+<main>
+    <app-toolbar [isLoginBtnShown]="true"></app-toolbar>
+    <div class="p-4 flex justify-center mt-10">
+        <form class="border bg-white shadow-sm p-4 lg:p-10" [formGroup]="loginForm">
+            <h1 class="font-semibold text-gray-900 text-xl">Connectez-Vous</h1>
+            <p>veuillez entrer votre email ou<a routerLink="/register" class="text-blue-600 ml-2">S'inscrire</a></p>
+            <input type="email" class="p-2 outline-none border w-full mt-5" placeholder="email" formControlName="email"> <br>
+            <input type="password" class="p-2 outline-none border w-full mt-5" placeholder="password" formControlName="password"> <br>
+            <p *ngIf="showError" class="mt-5 text-sm text-red-600"> {{errorMsg}} </p>
+            <button class="bg-blue-600 mt-5 cursor-pointer disabled:bg-gray-400 w-full p-2 text-white" [disabled]="loginForm.invalid" type="submit" (click)="onSubmit()">Connexion</button>
+        </form>
+    </div>
+</main>

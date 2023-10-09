@@ -1,0 +1,12 @@
+<main class="mt-5 flex flex-col  items-center p-4">
+    <div class="flex bg-white shadow-sm hover:shadow-lg hover:duration-200 mt-4 w-[90vw] items-center justify-between p-3 border" *ngFor="let todo of todos$ | async">
+        <div class="flex ">
+            <input type="checkbox" class="" name="done" [checked]="todo.done" (click)="updateTodo(todo)">
+            <div class="ml-3 cacher" [ngClass]="{ done: todo.done }">
+                <label class="font-semibold"> {{todo.title}} </label>
+                <h5 class="text-sm text-gray-700"> {{todo.description}} </h5>
+            </div>
+        </div>
+        <button class="bg-red-600 text-white p-2 hover:bg-red-400 hover:duration-200" (click)="deleteTodo(todo)">Supprimer</button>
+    </div>
+</main>

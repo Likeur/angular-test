@@ -1,0 +1,10 @@
+<app-toolbar [isRegisterBtnShown]="true"></app-toolbar>
+<div class="p-5 flex justify-center mt-10">
+     <form class="border bg-white shadow-sm p-4 lg:p-10" [formGroup]="registerForm">
+            <h1 class="font-semibold text-gray-900 text-xl">Enregistrez-Vous</h1>
+            <p>veuillez entrer un email et un mot de passe <a routerLink="/login" class="text-blue-600 ml-2">Se Connecter</a></p>
+            <input type="email" class="p-2 outline-none border w-full mt-5" placeholder="email" formControlName="Email"> <br>
+            <input placeholder="mot de passe" class="p-2 outline-none border w-full mt-5" type="password" formControlName="password">
+            <button class="bg-blue-600 mt-5 cursor-pointer disabled:bg-gray-400 w-full p-2 text-white" [disabled]="registerForm.invalid" type="submit" (click)="onSubmit()">Inscription</button>
+      </form>
+</div>
